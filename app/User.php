@@ -36,4 +36,9 @@ class User extends Model implements AuthenticatableContract,
      * @var array
      */
     protected $hidden = ['password', 'remember_token'];
+
+    //define one to may relationship with project model
+    public function project(){
+        return $this->hasMany('\App\Project');
+    }
 }
