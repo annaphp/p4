@@ -5,9 +5,18 @@
         <title>@yield('title')</title>
         <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.5/sandstone/bootstrap.min.css" rel="stylesheet" integrity="sha256-Ay17X/itZzhUFkDfLB9MICE7tbVwtPuFhcwDpABdbEA= sha512-eTtl6Aa3v8DrTCYWH7cAfXt6QW8DpsFn0hdCcYIWe6VDMyPMikXBWd/9bZR5YZNrmHBBu4KGdVgfPs1aEEgVIw==" crossorigin="anonymous"></head>
         <link rel="stylesheet" href="css/style.css">
-        
+
+
+
     </head>
     <body>
+            @if(count($errors) > 0)
+                <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+            </ul>
+            @endif
         @if(Session::has('flash_message'))
             <div class='flash_message'>
                 {{ Session::get('flash_message') }}

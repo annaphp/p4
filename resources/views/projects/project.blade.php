@@ -17,19 +17,12 @@
 
         <div class='form-block'>
             <label>Title:</label>
-            <input type='text' id='title' name='title'
-                   value='{{ old('title','Clean Bathroom') }}'
-            >
+            <input type='text' name='title'
+                   value='{{ old('title','Clean Bathroom') }}'            >
         </div>
-
         <div class='form-block'>
             <label for='title'>Due Date:</label>
-            <input
-                type='date'
-                id='due_date'
-                name="due_date"
-                value='{{ old('due_date','12/23/2015') }}'
-            >
+                @include('partials.date_input');
         </div>
 
         <button type="submit" class="">Add Project</button>

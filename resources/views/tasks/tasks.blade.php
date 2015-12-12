@@ -6,9 +6,7 @@ Tasks
 
 @section('extra_navigation')
 <li><a href='/tasks/new/{{$project_id}}'> Add Task </a></li>
-<?php
-echo 'hello';
-?>
+
 @endsection
 
 @section('content')
@@ -19,11 +17,12 @@ echo 'hello';
 
      @foreach($tasks as $task)
 
-           <a href='/tasks/edit'>
+           <a href='/tasks/edit/{{$task->id}}'>Edit</a>
+           <a href='/tasks/confirm-delete/{{$task->id}}'>Delete</a>
             <input type='hidden' name='task_id' value='{{ $task->id }}'>
 
-           <div class = 'task'> {{ $task->description }} </div>
-           </a>
+           <div class='task'> {{ $task->description }} </div>
+
        </br>
 
    @endforeach

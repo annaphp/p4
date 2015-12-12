@@ -66,20 +66,26 @@ Route::post('/projects/{id}','ProjectsController@postEdit');
 Route::post('/projects/delete/{id}', 'ProjectsController@postDelete');
 
 //tasks routes
-Route::get('/tasks/{project_id}', 'TasksController@getShow');
+Route::get('/tasks/show/{project_id}', 'TasksController@getShow');
 //think of a different controller name
 Route::get('/tasks/incomplete', 'TasksController@getShowIncomplete');
 Route::get('/tasks/completed','TasksController@getShowComplete');
 //{id?} is a project id
+Route::post('/tasks/new','TasksController@postCreate');
 Route::get('/tasks/new/{project_id}','TasksController@getCreate');
-Route::post('/tasks/new/{project_id?}', 'TasksController@postCreate');
 
 
+Route::post('/tasks/edit', 'TasksController@postEdit');
 Route::get('/tasks/edit/{id}','TasksController@getEdit');
 
-//delete route - needs to be changed
-Route::post('/tasks/delete/{id}','TasksController@postDelete');
 
+//delete route - needs to be changed
+Route::get('tasks/confirm-delete/{id}', 'TasksController@getConfirmDelete');
+Route::get('/tasks/delete/{id}','TasksController@getDelete');
+
+//delete routes for project
+Route::get('projects/confirm-delete/{id}', 'ProjectsController@getConfirmDelete');
+Route::get('projects/delete/{id}', 'ProjectsController@getDelete');
 //to test database connection
 Route::get('/debug', function() {
 

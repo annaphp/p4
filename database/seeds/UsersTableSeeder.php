@@ -11,20 +11,16 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('users')->insert([
-            'name'=>'Anna',
-            'email'=>'anna@gmail.com',
-            'password'=>'goodpassword',
-            'created_at' => Carbon\Carbon::now()->toDateTimeString(),
-            'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
-        ]);
+        $user = \App\User::firstOrCreate(['email' => 'jill@harvard.edu']);
+        $user->name = 'Jill';
+        $user->email = 'jill@harvard.edu';
+        $user->password = \Hash::make('helloworld');
+        $user->save();
 
-        DB::table('users')->insert([
-            'name'=>'Zina',
-            'email'=>'zina@gmail.com',
-            'password'=>'zinapassword',
-            'created_at' => Carbon\Carbon::now()->toDateTimeString(),
-            'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
-        ]);
+        $user = \App\User::firstOrCreate(['email' => 'jamal@harvard.edu']);
+        $user->name = 'Jamal';
+        $user->email = 'jamal@harvard.edu';
+        $user->password = \Hash::make('helloworld');
+        $user->save();
     }
 }

@@ -16,18 +16,14 @@
 
         <div class='form-block'>
             <label>Description:</label>
-            <input type='text'  name='descripion'
+            <input type='text'  name='description'
                 value='{{ old('description','buy soap') }}'
             >
         </div>
 
         <div class='form-block'>
             <label>Due Date:</label>
-            <input
-                type='date'
-                name="due_date"
-                value='{{ old('due_date','12/23/2015') }}'
-            >
+            @include('partials.date_input');
         </div>
 
         <button type="submit" class="">Add Task</button>

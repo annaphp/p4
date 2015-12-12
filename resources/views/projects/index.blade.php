@@ -16,8 +16,8 @@ Projects
     @if ($projects->count()>0)
 
      @foreach($projects as $project)
-
-           <a href='/tasks/{{$project->id}}'>
+           <a href='projects/confirm-delete/{{$project->id}}'> Delete</a>
+           <a href='/tasks/show/{{$project->id}}'>
 
             <div class='project'> {{ $project->title}} </div>
 
