@@ -3,6 +3,11 @@
 @section('title')
     Edit Task
 @endsection
+@section('extra_navigation')
+<li><a href='/tasks/show/{{$task->project_id}}'> View Tasks </a></li>
+
+
+@endsection
 
 
 @section('content')
@@ -22,13 +27,16 @@
 
         <div class='form-block'>
             <label>Due Date is set to:</label>
-            <input type="text" value='{{$due_date}}' readonly>
+            <input type="text" value='{{$due_date->format('F j, Y')}}' readonly>
             <label>Change Due Date?</label>
             @include('partials.date_input');
         </div>
 
         <div class='form-block'>
             <label>Completed:</label>
+            <?php
+            dump($task->completed);
+          ?>
             @if($task->completed === 1)
                 <input type="radio" name="completed" value="1" checked="checked">Yes<br>
                 <input type="radio" name="completed" value="0">No<br>

@@ -27,8 +27,12 @@ class ProjectsController extends Controller
     public function postCreate(Request $request){
         $this->validate(
             $request,
-            [ 'title'=>'required|max:50']
-        );
+            [ 'title'=>'required|max:50',
+                  'year'=>'required',
+                   'month'=>'required',
+                   'day'=>'required']
+            );
+
         $year = $request->year;
         $month = $request->month;
         $day = $request ->day;

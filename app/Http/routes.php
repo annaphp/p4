@@ -86,6 +86,13 @@ Route::get('/tasks/delete/{id}','TasksController@getDelete');
 //delete routes for project
 Route::get('projects/confirm-delete/{id}', 'ProjectsController@getConfirmDelete');
 Route::get('projects/delete/{id}', 'ProjectsController@getDelete');
+
+//routes for complete and incomlete tasks
+Route::get('/tasks/show/incompleted/{project_id}','TasksController@getShowIncompleted');
+Route::get('/tasks/show/completed/{project_id}','TasksController@getShowCompleted');
+
+
+
 //to test database connection
 Route::get('/debug', function() {
 

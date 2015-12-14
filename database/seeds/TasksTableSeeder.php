@@ -15,8 +15,11 @@ class TasksTableSeeder extends Seeder
             'created_at' => Carbon\Carbon::now()->toDateTimeString(),
             'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
             'description' => 'buy paint',
+            'due_date' => Carbon\Carbon::now()->toDateTimeString(),
             'completed' => 0,
-            'project_id' => 1,
+            'project_id' => \App\Project::first()->id,
+
+
 
         ]);
 
@@ -24,8 +27,9 @@ class TasksTableSeeder extends Seeder
             'created_at' => Carbon\Carbon::now()->toDateTimeString(),
             'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
             'description' => 'buy brushes',
+            'due_date' => Carbon\Carbon::now()->toDateTimeString(),
             'completed' => 1,
-            'project_id'=>1,
+            'project_id'=>\App\Project::first()->id,
 
 
         ]);
@@ -34,8 +38,9 @@ class TasksTableSeeder extends Seeder
             'created_at' => Carbon\Carbon::now()->toDateTimeString(),
             'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
             'description' => 'do something else',
+            'due_date' => Carbon\Carbon::now()->toDateTimeString(),
             'completed' => 0,
-            'project_id' => 2,
+            'project_id' =>\App\Project::first()->id,
 
         ]);
     }

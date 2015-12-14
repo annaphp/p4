@@ -48,7 +48,9 @@ class TasksController extends Controller
 
         //dump($project_id);
         $tasks = \App\Task::where('project_id', $project_id)->get();
-        //dump($tasks);
+        //$created_at = Carbon::parse($tasks->created_at)->toFormattedDateString();
+    //    $due_date = $created_at->toFormattedDateString();
+
         return view('tasks.tasks')->with('tasks',$tasks)->with('project_id',$project_id);
     }
 
@@ -59,7 +61,7 @@ class TasksController extends Controller
         //if the due date is not set
         if(strcmp($task->due_date,'0000-00-00') !== 0) {
             $due_date = Carbon::parse($task->due_date);
-            $due_date = $due_date->toFormattedDateString();
+        //    $due_date = $task->due_date;
         }
         else {
             $due_date = 'Due date is not set';
@@ -71,6 +73,8 @@ class TasksController extends Controller
     public function postEdit(Request $request){
         $task = \App\Task::find($request->task_id);
         dump($task->description);
+        $task->description = $request->description;
+        $task->completed=$request->completed;
 
         //due date info
         $year = $request->year;
@@ -103,6 +107,11 @@ class TasksController extends Controller
         $task->delete();
         \Session::flash('flash_message','Your task was deleted.');
         return redirect('/tasks/show/'.$project_id);
+
+    }
+
+    public function getShowIncompleted($project_id){
+        $tasks = \App\Task::where('project_id', $project_id,'completed')->get();
 
     }
 }

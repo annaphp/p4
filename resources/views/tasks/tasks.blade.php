@@ -6,6 +6,8 @@ Tasks
 
 @section('extra_navigation')
 <li><a href='/tasks/new/{{$project_id}}'> Add Task </a></li>
+<li><a href='/tasks/show/incompleted/{{$task->project_id}}'>View Incomplete Tasks</a></li>
+
 
 @endsection
 
@@ -21,7 +23,18 @@ Tasks
            <a href='/tasks/confirm-delete/{{$task->id}}'>Delete</a>
             <input type='hidden' name='task_id' value='{{ $task->id }}'>
 
-           <div class='task'> {{ $task->description }} </div>
+           <div class='task'>
+               {{ $task->description }}
+               <p> Task created on: {{$task->created_at->format('F j, Y')}}  </p>
+
+               Task completed?
+               @if($task->completed === 1)
+                   Yes
+               @else
+                  No
+               @endif
+
+           </div>
 
        </br>
 
