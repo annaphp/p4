@@ -2,41 +2,32 @@
 
 @section('content')
 
-    <p>Already have an account? <a href='/login'>Login here...</a></p>
 
     <h1>Register</h1>
-
-    @if(count($errors) > 0)
-        <ul class='errors'>
-            @foreach ($errors->all() as $error)
-                <li><span class='fa fa-exclamation-circle'></span> {{ $error }}</li>
-            @endforeach
-        </ul>
-    @endif
 
     <form method='POST' action='/register'>
         {!! csrf_field() !!}
 
-        <div class='form-group'>
+        <div>
             <label for='name'>Name</label>
-            <input type='text' name='name' id='name' value='{{ old('name') }}'>
+            <input type='text' name='name'  value='{{ old('name') }}'>
         </div>
 
-        <div class='form-group'>
+        <div>
             <label for='email'>Email</label>
-            <input type='text' name='email' id='email' value='{{ old('email') }}'>
+            <input type='text' name='email'  value='{{ old('email') }}'>
         </div>
 
-        <div class='form-group'>
+        <div>
             <label for='password'>Password</label>
-            <input type='password' name='password' id='password'>
+            <input type='password' name='password'>
         </div>
 
-        <div class='form-group'>
+        <div class>
             <label for='password_confirmation'>Confirm Password</label>
-            <input type='password' name='password_confirmation' id='password_confirmation'>
+            <input type='password' name='password_confirmation'>
         </div>
-
+        <br>
         <button type='submit' class='btn btn-primary'>Register</button>
 
     </form>

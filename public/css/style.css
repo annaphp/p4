@@ -1,24 +1,94 @@
 .flash_message{
-    width:100%;
+
     text-align: center;
-    padding:5px;
-    position:fixed;
-    top:0;
-    left:0;
-    background-color: yellow;
+    padding:10px;
+    width:100%;
+    background-color: #ff6666;
+    color:white;
     font-weight: bold;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+
+body {
+  width: 80%;
+  min-width: 700px;
+  margin: auto;
+  color:#47476B;
+  background-color: #f2f2f2;
+}
+
+#user_name{
+    position:relative;
+    left: 750px;
+}
+
+/* task create field style*/
+.task_field{
+    width: 600px;
+    height: 150px;
+}
+
+textarea {
+display:block;
 
 }
 
-li{
-    display: inline;
+/* navigation style */
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #29293d;
 }
 
-.project {
-    padding: 10px;
-    background-color: #99ccff;
+li {
+    float: left;
 }
-.task {
-    padding: 10px;
-    background-color: #1aff8c;
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 10px 12px;
+    text-decoration: none;
+}
+
+
+li a:hover {
+    background-color: #ffdc99;
+    text-decoration: none;
+    color: black;
+
+}
+
+input    {
+width:375px;
+display:block;
+border: 1px solid #8c8c8c;
+height: 25px;
+}
+
+
+#title:hover{
+    text-decoration:none
+
+}
+#project{
+    font-weight: bold;
+    font-size: 120%;
+}
+
+#wlcm_msg{
+    line-height: 150%;
+    text-align: center;
+    font-size: 120%;
+    padding-top: 10px;
+}
+
+#error {
+    color: red;
 }

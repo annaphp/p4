@@ -6,34 +6,22 @@ Projects
 
 @section('content')
 
-    @if (Auth::check())
-         Hello, {{ Auth::user()->name }}!
-    @else
-        Hello, stranger!
-    @endif
+    <h3>All Projects</h3>
 
-    <h1>All Projects</h1>
-    @if ($projects->count()>0)
+        @if ($projects->count()>0)
 
-     @foreach($projects as $project)
-           <a href='projects/confirm-delete/{{$project->id}}'> Delete</a>
-           <a href='/tasks/show/{{$project->id}}'>
-
-            <div class='project'> {{ $project->title}} </div>
-
-             {{--   <input type='hidden' name='project_id' value='{{ $project->id }}'> --}}
-             {{--  <input type='sumbit' value='{{ $project->title}}'> --}}
-
-         </a>
-
-
-
-       </br>
-
-   @endforeach
-   @else
-    <p>
-        {{ Auth::user()->name }}, you don't have any created projects!
-    </p>
-    @endif
+            @foreach($projects as $project)
+                <br>
+                <a href='projects/confirm-delete/{{$project->id}}'> Delete</a>
+                <br>
+                <a href='/tasks/show/{{$project->id}}'>
+                <li id="project">{{ $project->title}} </li>
+                </a>
+                <br>
+            @endforeach
+        @else
+            <p>
+                {{ Auth::user()->name }}, you don't have any created projects!
+            </p>
+        @endif
 @endsection

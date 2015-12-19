@@ -7,26 +7,23 @@
 
 @section('content')
 
-    <h1>Add a new task</h1>
+    <h3>New task:</h3>
 
     <form method='POST' action='/tasks/new'>
-        <div>{{ $project_id}}</div>
         <input type='hidden' name='_token' value='{{ csrf_token() }}' >
         <input type='hidden' name='project_id' value='{{ $project_id }}'>
 
-        <div class='form-block'>
+        <div>
             <label>Description:</label>
-            <input type='text'  name='description'
-                value='{{ old('description','buy soap') }}'
-            >
+            <textarea  name='description' class='task_field'></textarea>
         </div>
 
-        <div class='form-block'>
+        <div>
             <label>Due Date:</label>
             @include('partials.date_input');
         </div>
 
-        <button type="submit" class="">Add Task</button>
+        <button type="submit" class='btn btn-primary'>Add Task</button>
     </form>
 
 @endsection
