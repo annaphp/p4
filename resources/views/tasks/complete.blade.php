@@ -27,7 +27,7 @@ Incompleted Tasks
                     {{ $task->description }} <br>
                     Task created on: {{$task->created_at->format('F j, Y')}}<br>
                     Task completed?
-                    @if($task->completed === 1)
+                    @if($task->completed ==1)
                         Yes
                     @else
                         No
