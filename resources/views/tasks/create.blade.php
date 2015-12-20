@@ -20,7 +20,7 @@
 
         <div>
             <label>Due Date:</label>
-            @include('partials.date_input');
+            @include('partials.date_input')
         </div>
 
         <button type="submit" class='btn btn-primary'>Add Task</button>

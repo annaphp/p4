@@ -11,10 +11,10 @@ Projects & Tasks is online tasks management tool, where users can:
 * View completed and incomplete tasks separately
 
 ## Demo
-<https://youtu.be/u2VxbxsDvrs>
+<https://youtu.be/CWgIL5ycx3w>
 
 
-## Outside code
+## Outside code and Resources
 * Bootstrap:
   http://getbootstrap.com/
 * CSCI E-15 Notes
