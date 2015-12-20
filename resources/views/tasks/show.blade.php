@@ -17,16 +17,18 @@ Tasks
     @if ($tasks->count()>0)
 
     @foreach($tasks as $task)
-        <div id='task'>
+
+        <div  class='{{($task->completed == 1) ? 'task_compl' : 'task_incmpl'}}'>
         <a href='/tasks/edit/{{$task->id}}'>Edit</a>
         <a href='/tasks/confirm-delete/{{$task->id}}'>Delete</a>
         <br>
         <input type='hidden' name='task_id' value='{{ $task->id }}'>
 
+
             {{ $task->description }}<br>
             Task created on: {{$task->created_at->format('F j, Y')}}<br>
             Task completed?
-            @if($task->completed === 1)
+            @if($task->completed == 1)
             Yes
             @else
             No

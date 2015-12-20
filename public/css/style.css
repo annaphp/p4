@@ -92,3 +92,11 @@ height: 25px;
 #error {
     color: red;
 }
+
+.task_compl{
+    color:#999999;
+
+}
+.task_incmpl{
+    color:#333333;
+}
