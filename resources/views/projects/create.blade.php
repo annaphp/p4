@@ -19,7 +19,7 @@ Create New Project
                 </div>
                 <div>
                     <label for='title'>Due Date:</label>
-                    @include('partials.date_input');
+                    @include('partials.date_input')
                 </div>
 
                 <button type="submit" class='btn btn-primary'>Add Project</button>
