@@ -25,7 +25,7 @@ Incompleted Tasks
                     {{ $task->description }} <br>
                     Task created on: {{$task->created_at->format('F j, Y')}} <br>
                     Task completed?
-                    @if($task->completed === 1)
+                    @if($task->completed == 1)
                         Yes
                     @else
                         No
@@ -35,7 +35,7 @@ Incompleted Tasks
         @endforeach
     @else
         <p>
-            {{ Auth::user()->name }}, you don't incomplete tasks!
+            {{ Auth::user()->name }}, you don't have incomplete tasks!
         </p>
     @endif
 

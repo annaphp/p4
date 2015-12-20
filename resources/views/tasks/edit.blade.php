@@ -30,10 +30,10 @@
 
         </div>
 
-        <div class='form-block'>
+        <div>
             <label>Completed:</label>
 
-            @if($task->completed === 1)
+            @if($task->completed == 1)
                 <input type="radio" name="completed" value="1" checked="checked">Yes<br>
                 <input type="radio" name="completed" value="0">No<br>
             @else
@@ -44,5 +44,5 @@
 
         <button type="submit" class='btn btn-primary'>Save Changes</button>
     </form>
-
+    
 @endsection
